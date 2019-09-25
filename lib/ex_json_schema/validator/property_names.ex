@@ -27,7 +27,7 @@ defmodule ExJsonSchema.Validator.PropertyNames do
   end
 
   defp do_validate(_, false, data = %{}) do
-    if Map.size(data) == 0 do
+    if map_size(data) == 0 do
       []
     else
       [{"Expected data to not have any keys.", []}]

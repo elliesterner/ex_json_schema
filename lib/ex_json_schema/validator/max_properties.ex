@@ -27,10 +27,10 @@ defmodule ExJsonSchema.Validator.MaxProperties do
   end
 
   defp do_validate(max_properties, data) when is_map(data) do
-    if Map.size(data) <= max_properties do
+    if map_size(data) <= max_properties do
       []
     else
-      [{"Expected a maximum of #{max_properties} properties but got #{Map.size(data)}", []}]
+      [{"Expected a maximum of #{max_properties} properties but got #{map_size(data)}", []}]
     end
   end
 

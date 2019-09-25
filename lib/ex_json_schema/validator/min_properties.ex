@@ -27,10 +27,10 @@ defmodule ExJsonSchema.Validator.MinProperties do
   end
 
   defp do_validate(min_properties, data) when is_map(data) do
-    if Map.size(data) >= min_properties do
+    if map_size(data) >= min_properties do
       []
     else
-      [{"Expected a minimum of #{min_properties} properties but got #{Map.size(data)}", []}]
+      [{"Expected a minimum of #{min_properties} properties but got #{map_size(data)}", []}]
     end
   end
 
